@@ -1,0 +1,65 @@
+﻿@model _20240300TryCWAAPI.Models.Predict.PredictModel
+
+<h2>@Model.WeatherDataList.records.DatasetDescription</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>地點</th>
+            <th>MaxT</th>
+            <th>MinT</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in @Model.PredictList)
+        {
+            <tr>
+                <td>
+                    @a.cityname
+                </td>
+                @foreach (var b in a.newmaxt)
+                {
+                <td>@b</td>
+                }
+                @foreach (var c in a.newmint)
+                {
+                <td>@c</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>地點</th>
+                <th>Wx</th>
+                <th>PoP</th>
+                <th>MinT</th>
+                <th>CI</th>
+                <th>MaxT</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var Loc in Model.WeatherDataList.records.Location)
+            {
+                <tr>
+                    <td>@Loc.LocationName</td>
+                    @foreach (var Wea in Loc.WeatherElement)
+                    {
+
+                        foreach (var Tim in Wea.Time)
+                        {
+                            <td>@Tim.Parameter.ParameterName </td>
+                            break;
+                        }
+                    }
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
