@@ -29,37 +29,3 @@
         }
     </tbody>
 </table>
-
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>地點</th>
-                <th>Wx</th>
-                <th>PoP</th>
-                <th>MinT</th>
-                <th>CI</th>
-                <th>MaxT</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var Loc in Model.WeatherDataList.records.Location)
-            {
-                <tr>
-                    <td>@Loc.LocationName</td>
-                    @foreach (var Wea in Loc.WeatherElement)
-                    {
-
-                        foreach (var Tim in Wea.Time)
-                        {
-                            <td>@Tim.Parameter.ParameterName </td>
-                            break;
-                        }
-                    }
-
-                </tr>
-            }
-        </tbody>
-    </table>
-
