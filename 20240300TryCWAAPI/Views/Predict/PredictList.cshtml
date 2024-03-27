@@ -1,31 +1,59 @@
 ﻿@model _20240300TryCWAAPI.Models.Predict.PredictModel
 
+<style>
+    .card {
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        border-color: blue;
+    }
+</style>
+
 <h2>@Model.WeatherDataList.records.DatasetDescription</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>地點</th>
-            <th>MaxT</th>
-            <th>MinT</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var a in @Model.PredictList)
+<div class="container">
+    <div class="row">
+        @foreach (var PredictList in @Model.PredictList)
         {
-            <tr>
-                <td>
-                    @a.cityname
-                </td>
-                @foreach (var b in a.newmaxt)
-                {
-                <td>@b</td>
-                }
-                @foreach (var c in a.newmint)
-                {
-                <td>@c</td>
-                }
-            </tr>
+            <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h3 class="card-title">@PredictList.cityname</h3>
+                        <dl class="row">
+
+                            <dt class="col-sm-4">最高氣溫</dt>
+                            @foreach (var b in PredictList.newmaxt)
+                            {
+                                <dd class="col-sm-8">@b°C</dd>
+                            }
+                            <dt class="col-sm-4">最低氣溫</dt>
+                            @foreach (var c in PredictList.newmint)
+                            {
+                                <dd class="col-sm-8">@c°C</dd>
+                            }
+                            <dt class="col-sm-4">舒適度</dt>
+                            @foreach (var e in PredictList.newci)
+                            {
+                                <dd class="col-sm-8">@e</dd>
+                            }
+
+                            <dt class="col-sm-4">降雨機會</dt>
+                            @foreach (var p in PredictList.newpop)
+                            {
+                                <dd class="col-sm-8">@p%</dd>
+                            }
+                            <dt class="col-sm-4">天氣現象</dt>
+                            @foreach (var d in PredictList.newwx)
+                            {
+                                <dd class="col-sm-8">@d</dd>
+                            }
+
+                        </dl>
+                    </div>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
+</div>

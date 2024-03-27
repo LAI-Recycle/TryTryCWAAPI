@@ -16,11 +16,15 @@ namespace _20240300TryCWAAPI.Models.Predict
 
         public List<PredictListData> PredictList { get; set; }
 
+        // Wx天氣現象,ManT最高溫度,MinT最低溫度,CI舒適度,PoP降雨機率
         public class PredictListData
         { 
             public string cityname { get; set; }
             public List<string> newmaxt { get; set; }
             public List<string> newmint { get; set; }
+            public List<string> newpop { get; set; }
+            public List<string> newwx { get; set; }
+            public List<string> newci { get; set; }
         }
 
         public class WeatherData
@@ -120,6 +124,9 @@ namespace _20240300TryCWAAPI.Models.Predict
                     cityname = WeatherDataList_temp.LocationName,
                     newmaxt = new List<string>(),
                     newmint = new List<string>(),
+                    newpop = new List<string>(),
+                    newwx = new List<string>(),
+                    newci = new List<string>(),
                 };
 
                 foreach (var weatherElement in WeatherDataList_temp.WeatherElement)
@@ -128,19 +135,27 @@ namespace _20240300TryCWAAPI.Models.Predict
                     {
                         if (weatherElement.ElementName == "MaxT") 
                         {
-                            predictData.newmaxt.Add(time.Parameter.ParameterName);
+                            predictData.newmaxt.Add(time.Parameter.ParameterName ?? string.Empty);
                             break; 
                         }
-                    }
-                }
-
-                foreach (var weatherElement in WeatherDataList_temp.WeatherElement)
-                {
-                    foreach (var time in weatherElement.Time)
-                    {
                         if (weatherElement.ElementName == "MinT")
                         {
-                            predictData.newmint.Add(time.Parameter.ParameterName);
+                            predictData.newmint.Add(time.Parameter.ParameterName ?? string.Empty);
+                            break;
+                        }
+                        if (weatherElement.ElementName == "PoP")
+                        {
+                            predictData.newpop.Add(time.Parameter.ParameterName ?? string.Empty);
+                            break;
+                        }
+                        if (weatherElement.ElementName == "CI")
+                        {
+                            predictData.newci.Add(time.Parameter.ParameterName ?? string.Empty);
+                            break;
+                        }
+                        if (weatherElement.ElementName == "Wx")
+                        {
+                            predictData.newwx.Add(time.Parameter.ParameterName.ToString() ?? string.Empty);
                             break;
                         }
                     }
