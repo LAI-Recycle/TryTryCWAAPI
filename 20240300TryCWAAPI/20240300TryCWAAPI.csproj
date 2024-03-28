@@ -229,7 +229,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\MongoDBSettings.cs" />
-    <Compile Include="Models\Predict\PredictModel.cs" />
+    <Compile Include="Models\Predict\PredictDetailModel.cs" />
+    <Compile Include="Models\Predict\PredictListModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -286,6 +287,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Predict\PredictList.cshtml" />
+    <Content Include="Views\Predict\PredictDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

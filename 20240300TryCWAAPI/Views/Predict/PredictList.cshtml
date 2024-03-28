@@ -1,4 +1,4 @@
-﻿@model _20240300TryCWAAPI.Models.Predict.PredictModel
+﻿@model _20240300TryCWAAPI.Models.Predict.PredictListModel
 
 <style>
     .card {
@@ -9,51 +9,62 @@
         transform: scale(1.05);
         border-color: blue;
     }
+
+    .link-black {
+        color: black; /* 將連結顏色設置為黑色 */
+        text-decoration: none; /* 移除連結的下劃線 */
+    }
 </style>
-
+<br />
 <h2>@Model.WeatherDataList.records.DatasetDescription</h2>
-
+<br />
 <div class="container">
     <div class="row">
         @foreach (var PredictList in @Model.PredictList)
         {
-            <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h3 class="card-title">@PredictList.cityname</h3>
-                        <dl class="row">
+            
+                <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                    <a href="@Url.Action("PredictDetail", "Predict", new { choose_cityname = PredictList.cityname })" class="link-black">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
 
-                            <dt class="col-sm-4">最高氣溫</dt>
-                            @foreach (var b in PredictList.newmaxt)
-                            {
-                                <dd class="col-sm-8">@b°C</dd>
-                            }
-                            <dt class="col-sm-4">最低氣溫</dt>
-                            @foreach (var c in PredictList.newmint)
-                            {
-                                <dd class="col-sm-8">@c°C</dd>
-                            }
-                            <dt class="col-sm-4">舒適度</dt>
-                            @foreach (var e in PredictList.newci)
-                            {
-                                <dd class="col-sm-8">@e</dd>
-                            }
+                                <h3 class="card-title">@PredictList.cityname</h3>
 
-                            <dt class="col-sm-4">降雨機會</dt>
-                            @foreach (var p in PredictList.newpop)
-                            {
-                                <dd class="col-sm-8">@p%</dd>
-                            }
-                            <dt class="col-sm-4">天氣現象</dt>
-                            @foreach (var d in PredictList.newwx)
-                            {
-                                <dd class="col-sm-8">@d</dd>
-                            }
+                                <dl class="row">
 
-                        </dl>
-                    </div>
+                                    <dt class="col-sm-4">最高氣溫</dt>
+                                    @foreach (var b in PredictList.newmaxt)
+                                    {
+                                        <dd class="col-sm-8">@b°C</dd>
+                                    }
+                                    <dt class="col-sm-4">最低氣溫</dt>
+                                    @foreach (var c in PredictList.newmint)
+                                    {
+                                        <dd class="col-sm-8">@c°C</dd>
+                                    }
+                                    <dt class="col-sm-4">舒適度</dt>
+                                    @foreach (var e in PredictList.newci)
+                                    {
+                                        <dd class="col-sm-8">@e</dd>
+                                    }
+
+                                    <dt class="col-sm-4">降雨機會</dt>
+                                    @foreach (var p in PredictList.newpop)
+                                    {
+                                        <dd class="col-sm-8">@p%</dd>
+                                    }
+                                    <dt class="col-sm-4">天氣現象</dt>
+                                    @foreach (var d in PredictList.newwx)
+                                    {
+                                        <dd class="col-sm-8">@d</dd>
+                                    }
+
+                                </dl>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
+            
         }
     </div>
 </div>

@@ -1,0 +1,24 @@
+@model _20240300TryCWAAPI.Models.Predict.PredictDetailModel
+<br />
+<h2>縣市預報 - @Model.choose_cityname</h2>
+<br />
+<div class="container">
+    <div class="row">
+
+        @for (int i = 0; i < Model.PredictList[0].newmaxt.Count; i++)
+        {
+            <div class="col-sm-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body text-center">
+
+                        <h5 class="card-title">氣象預報</h5>
+                        <p>@Model.PredictList[0].startTime[i] - @Model.PredictList[0].endTime[i] 點</p>
+                        <p class="card-text">@Model.PredictList[0].newmaxt[i] - @Model.PredictList[0].newmint[i]℃</p>
+                        <p class="card-text">@Model.PredictList[0].newpop[i]%</p>
+                        <p class="card-text">@Model.PredictList[0].newci[i]</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
