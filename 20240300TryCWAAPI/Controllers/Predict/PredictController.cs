@@ -27,8 +27,10 @@ namespace _20240300TryCWAAPI.Controllers
 
         public async Task<ActionResult> PredictDetail (PredictDetailModel model)
         {
+            model.InitDict();
             await model.GetCWAApiListAsync();
             model.GetCityDetail();
+            
 
             return View(model);
         }

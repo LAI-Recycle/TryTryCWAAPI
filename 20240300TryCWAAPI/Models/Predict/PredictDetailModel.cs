@@ -82,6 +82,42 @@ namespace _20240300TryCWAAPI.Models.Predict
             public string ParameterUnit { get; set; }
         }
 
+        /// <summary>
+        /// 選擇城市名稱字典
+        /// </summary>
+        public Dictionary<string, string> ChooseCitynameDict = new Dictionary<string, string>();
+
+        /// <summary>
+        /// 初始化設定
+        /// </summary>
+        public void InitDict()
+        {
+            ChooseCitynameDict = new Dictionary<string, string>();
+            ChooseCitynameDict.Add("宜蘭縣", "宜蘭縣");
+            ChooseCitynameDict.Add("花蓮縣", "花蓮縣");
+            ChooseCitynameDict.Add("臺東縣", "臺東縣");
+            ChooseCitynameDict.Add("澎湖縣", "澎湖縣");
+            ChooseCitynameDict.Add("金門縣", "金門縣");
+            ChooseCitynameDict.Add("連江縣", "連江縣");
+            ChooseCitynameDict.Add("臺北市", "臺北市");
+            ChooseCitynameDict.Add("新北市", "新北市");
+            ChooseCitynameDict.Add("桃園市", "桃園市");
+            ChooseCitynameDict.Add("臺中市", "臺中市");
+            ChooseCitynameDict.Add("臺南市", "臺南市");
+            ChooseCitynameDict.Add("高雄市", "高雄市");
+            ChooseCitynameDict.Add("基隆市", "基隆市");
+            ChooseCitynameDict.Add("新竹縣", "新竹縣");
+            ChooseCitynameDict.Add("新竹市", "新竹市");
+            ChooseCitynameDict.Add("苗栗縣", "苗栗縣");
+            ChooseCitynameDict.Add("彰化縣", "彰化縣");
+            ChooseCitynameDict.Add("南投縣", "南投縣");
+            ChooseCitynameDict.Add("雲林縣", "雲林縣");
+            ChooseCitynameDict.Add("嘉義縣", "嘉義縣");
+            ChooseCitynameDict.Add("嘉義市", "嘉義市");
+            ChooseCitynameDict.Add("屏東縣", "屏東縣");
+        }
+
+
         public async Task<bool> GetCWAApiListAsync()
         {
             try
