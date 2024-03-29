@@ -232,6 +232,7 @@
     <Compile Include="Models\Predict\PredictDetailModel.cs" />
     <Compile Include="Models\Predict\PredictListModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Views\Predict\map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />

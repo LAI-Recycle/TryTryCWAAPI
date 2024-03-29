@@ -34,5 +34,14 @@ namespace _20240300TryCWAAPI.Controllers
 
             return View(model);
         }
+
+        /// <summary>
+        /// 測試用
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult map()
+        {
+            return View();
+        }
     }
 }
