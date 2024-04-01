@@ -12,6 +12,11 @@ namespace _20240300TryCWAAPI.Models.Predict
 
         public List<PredictListData> PredictList { get; set; }
 
+        /// <summary>
+        /// 天氣警告特報
+        /// </summary>
+        public SpecialWeatherWarningData SpecialWeatherWarningList { get; set; }
+
         // Wx天氣現象,ManT最高溫度,MinT最低溫度,CI舒適度,PoP降雨機率
         public class PredictListData
         { 
@@ -74,6 +79,12 @@ namespace _20240300TryCWAAPI.Models.Predict
             public string ParameterUnit { get; set; }
         }
 
+        public class SpecialWeatherWarningData
+    { 
+
+        }
+
+
         public async Task<bool> GetCWAApiListAsync()
         {
             try
@@ -106,6 +117,31 @@ namespace _20240300TryCWAAPI.Models.Predict
             }
 
             return false;
+        }
+
+        public async Task<bool> GetCWAApiSpecialWeatherWarningAsync()
+        {
+            string CWAAuthorization = "CWA-CD7DD4B6-4A6A-4A19-A2FF-AD801662DD42";
+            string WeatherForecast36Hour = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/W-C0033-002";
+            string URL = WeatherForecast36Hour + "?Authorization=" + CWAAuthorization;
+
+            using (var httpClient = new HttpClient())
+            {
+                // HttpResponseMessage response = await httpClient.GetAsync(URL);
+                // 
+                // if (response.IsSuccessStatusCode)
+                // {
+                //     string json = await response.Content.ReadAsStringAsync();
+                //      = JsonConvert.DeserializeObject<>(json);
+                //      = ;
+                // }
+                // else
+                // {
+                //     Console.WriteLine($"API 請求失敗，狀態碼: {response.StatusCode}");
+                // }
+            }
+
+            return true;
         }
 
         public bool GetNewList() {

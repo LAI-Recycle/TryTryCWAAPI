@@ -13,6 +13,7 @@ namespace _20240300TryCWAAPI.Controllers
             try
             {
                 await model.GetCWAApiListAsync();
+                await model.GetCWAApiSpecialWeatherWarningAsync();
 
                 model.GetNewList();
 
