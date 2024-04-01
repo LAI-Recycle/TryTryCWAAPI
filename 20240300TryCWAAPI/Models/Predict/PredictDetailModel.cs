@@ -15,6 +15,11 @@ namespace _20240300TryCWAAPI.Models.Predict
         /// </summary>
         public string choose_cityname { get; set; }
 
+        /// <summary>
+        /// 今天的日期
+        /// </summary>
+        public string TodayDate { get; set; }
+
         public List<PredictListData> PredictList { get; set; }
 
         public WeatherData WeatherDataList { get; set; }
@@ -92,6 +97,11 @@ namespace _20240300TryCWAAPI.Models.Predict
         /// </summary>
         public void InitDict()
         {
+            DateTime today = DateTime.Now;
+            string month = today.Month.ToString();
+            string day = today.Day.ToString();
+            TodayDate = month + "/" + day;
+
             ChooseCitynameDict = new Dictionary<string, string>();
             ChooseCitynameDict.Add("宜蘭縣", "宜蘭縣");
             ChooseCitynameDict.Add("花蓮縣", "花蓮縣");

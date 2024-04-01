@@ -3,7 +3,13 @@
 <script src="/Scripts/Predict/PredictDetail.js" type="text/javascript"></script>
 
 <br />
-<h2>縣市預報 - @Model.choose_cityname</h2>
+<h2>
+    @Model.TodayDate 縣市預報 - 
+    @if (Model.PredictList.Any())
+    {
+        @Model.choose_cityname
+    }
+</h2>
 <br />
 <table>
     <tr>
@@ -15,7 +21,7 @@
             <select id="Choose_Identity" name="Choose_Identity" onchange="Choose_Cityname_onChange(this);" originalvalue=@Model.choose_cityname class="form-select" aria-label="Default select example">
                 @foreach (var item in Model.ChooseCitynameDict)
                 {
-                <option value="@item.Key" @(item.Key == Model.choose_cityname ? "selected" : "")>@item.Value</option>
+                    <option value="@item.Key" @(item.Key == Model.choose_cityname ? "selected" : "")>@item.Value</option>
                 }
             </select>
             <!--<input class="helper input" type="text" id="Choose_UID" maxlength="20" name="Choose_UID" size="20" style=" background-color: #F0F0F0" disabled="" value="">-->
@@ -25,22 +31,28 @@
 <br />
 <div class="container">
     <div class="row">
+        @if (Model.PredictList.Any())
+        { 
+            for (int i = 0; i < Model.PredictList[0].newmaxt.Count; i++)
+            {
+                <div class="col-sm-4 mb-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body text-center">
 
-        @for (int i = 0; i < Model.PredictList[0].newmaxt.Count; i++)
-        {
-            <div class="col-sm-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body text-center">
-
-                        <h5 class="card-title">氣象預報</h5>
-                        <p>@Model.PredictList[0].startTime[i] - @Model.PredictList[0].endTime[i] 點</p>
-                        <p class="card-text">@Model.PredictList[0].newmaxt[i] - @Model.PredictList[0].newmint[i]℃</p>
-                        <p class="card-text">@Model.PredictList[0].newpop[i]%</p>
-                        <p class="card-text">@Model.PredictList[0].newci[i]</p>
+                            <h5 class="card-title">氣象預報</h5>
+                            <p>@Model.PredictList[0].startTime[i] - @Model.PredictList[0].endTime[i] 點</p>
+                            <p class="card-text">@Model.PredictList[0].newmaxt[i] - @Model.PredictList[0].newmint[i]℃</p>
+                            <p class="card-text">@Model.PredictList[0].newpop[i]%</p>
+                            <p class="card-text">@Model.PredictList[0].newci[i]</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         }
-        
     </div>
 </div>
+<br />
+<p class="text-center">
+    <a href="/Predict/PredictList" class="btn btn-secondary" type="button" id="BackButton" name="BackButton">返回</a>
+    <!--<input act="CommentEdit" class="btnSearch" con="Comment" id="CancelButton" name="CancelButton" onclick="_ButtonSubmit_onClick(this)" type="button" value="關閉">-->
+</p>
