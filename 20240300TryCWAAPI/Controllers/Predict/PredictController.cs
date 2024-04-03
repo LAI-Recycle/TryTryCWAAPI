@@ -12,28 +12,55 @@ namespace _20240300TryCWAAPI.Controllers
         {
             try
             {
-                await model.GetCWAApiListAsync();
-                await model.GetCWAApiSpecialWeatherWarningAsync();
+                if (await model.GetCWAApiListAsync() == false)
+                {
+                    throw new Exception("failed.");
+                }
 
-                model.GetNewList();
+                if (await model.GetCWAApiSpecialWeatherWarningAsync() == false) 
+                {
+                    throw new Exception("failed.");
+                }
+
+                if (model.GetNewWeatherList() == false) 
+                {
+                    throw new Exception("failed.");
+                }
+
+                if (model.GetNewWeatherWaringList() == false)
+                {
+                    throw new Exception("failed.");
+                }
 
                 return View(model);
             }
             catch (Exception ex)
             {
                 ViewBag.ErrorMessage = $"An error occurred: {ex.Message}";
-                return View();
+                return View("Error");
             }
         }
 
         public async Task<ActionResult> PredictDetail (PredictDetailModel model)
         {
-            model.InitDict();
-            await model.GetCWAApiListAsync();
-            model.GetCityDetail();
-            
+            try
+            {
+                model.InitDict();
 
-            return View(model);
+                if (await model.GetCWAApiListAsync() == false)
+                { 
+                }
+                if (model.GetCityDetail() == false) 
+                { 
+                }
+            
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = $"An error occurred: {ex.Message}";
+                return View("Error");
+            }
         }
 
         /// <summary>

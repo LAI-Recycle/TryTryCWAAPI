@@ -3,23 +3,41 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using static _20240300TryCWAAPI.Models.Predict.PredictDetailModel;
+using static _20240300TryCWAAPI.Models.Predict.PredictListModel;
 
 namespace _20240300TryCWAAPI.Models.Predict
 {
     public class PredictListModel
     {
-        public WeatherData WeatherDataList { get; set; }
+        /// <summary>
+        /// API天氣預報列表
+        /// </summary>
+        public WeatherData WeatherDataAPIData { get; set; }
 
+        /// <summary>
+        /// 天氣預報列表
+        /// </summary>
         public List<PredictListData> PredictList { get; set; }
 
         /// <summary>
-        /// 天氣警告特報
+        /// API天氣警告特報
         /// </summary>
-        public SpecialWeatherWarningData SpecialWeatherWarningList { get; set; }
+        public SpecialWeatherWarningData SpecialWeatherWarningAPIData { get; set; }
+        /// <summary>
+        /// 天氣預報列表
+        /// </summary>
+        public List<SpecialWeatherWarningListData> SpecialWeatherWarningList { get; set; }
 
-        // Wx天氣現象,ManT最高溫度,MinT最低溫度,CI舒適度,PoP降雨機率
+        /// <summary>
+        /// Wx天氣現象
+        /// ManT最高溫度
+        /// MinT最低溫度
+        /// CI舒適度
+        /// PoP降雨機率
+        /// </summary>
         public class PredictListData
-        { 
+        {
             public string cityname { get; set; }
             public List<string> newmaxt { get; set; }
             public List<string> newmint { get; set; }
@@ -27,7 +45,19 @@ namespace _20240300TryCWAAPI.Models.Predict
             public List<string> newwx { get; set; }
             public List<string> newci { get; set; }
         }
+        /// <summary>
+        /// datasetDescription濃霧特報
+        /// contentText描述內容
+        /// </summary>
+        public class SpecialWeatherWarningListData
+        {
+            public string DatasetDescription { get; set; }
+            public string ContentText { get; set; }
+        }
 
+        /// <summary>
+        /// 天氣資訊
+        /// </summary>
         public class WeatherData
         {
             public string success { get; set; }
@@ -79,12 +109,86 @@ namespace _20240300TryCWAAPI.Models.Predict
             public string ParameterUnit { get; set; }
         }
 
+        /// <summary>
+        /// 天氣特警報
+        /// </summary>
         public class SpecialWeatherWarningData
-    { 
-
+        {
+            public string success { get; set; }
+            public Result result { get; set; }
+            public SpecialWeatherWarningRecords Records { get; set; }
         }
 
+        public class SpecialWeatherWarningRecords
+        {
+            public List<SpecialWeatherWarningRecord> Record { get; set; }
+        }
 
+        public class SpecialWeatherWarningRecord
+        {
+            public SpecialWeatherWarningDatasetInfo DatasetInfo { get; set; }
+            public SpecialWeatherWarningContents Contents { get; set; }
+            public SpecialWeatherWarningHazardConditions HazardConditions { get; set; }
+        }
+        public class SpecialWeatherWarningDatasetInfo
+        {
+            public string datasetDescription { get; set; }
+            public string datasetLanguage { get; set; }
+            public SpecialWeatherWarningvalidTime validTime { get; set; }
+            public string issueTime { get; set; }
+            public string update { get; set; }
+        }
+        public class SpecialWeatherWarningvalidTime
+        {
+            public string startTime { get; set; }
+            public string endTime { get; set; }
+        }
+        public class SpecialWeatherWarningContents
+        {
+            public SpecialWeatherWarningContent content { get; set; }
+        }
+        public class SpecialWeatherWarningContent
+        {
+            public string contentLanguage { get; set; }
+            public string contentText { get; set; }
+        }
+        public class SpecialWeatherWarningHazardConditions
+        {
+            public SpecialWeatherWarningHazards Hazards { get; set; }
+        }
+
+        public class SpecialWeatherWarningHazards
+        {
+            public List<SpecialWeatherWarningHazard> Hazard { get; set; }
+        }
+
+        public class SpecialWeatherWarningHazard
+        {
+            public SpecialWeatherWarningInfo Info { get; set; }
+        }
+
+        public class SpecialWeatherWarningInfo
+        {
+            public string Language { get; set; }
+            public string Phenomena { get; set; }
+            public string Significance { get; set; }
+            public SpecialWeatherWarningAffectedAreas AffectedAreas { get; set; }
+        }
+
+        public class SpecialWeatherWarningAffectedAreas
+        {
+            public List<SpecialWeatherWarningLocation> Location { get; set; }
+        }
+
+        public class SpecialWeatherWarningLocation
+        {
+            public string LocationName { get; set; }
+        }
+
+        /// <summary>
+        /// 取得中央氣象局API內容列表
+        /// </summary>
+        /// <returns></returns>
         public async Task<bool> GetCWAApiListAsync()
         {
             try
@@ -101,7 +205,7 @@ namespace _20240300TryCWAAPI.Models.Predict
                     {
                         string json = await response.Content.ReadAsStringAsync();
                         WeatherData weatherData = JsonConvert.DeserializeObject<WeatherData>(json);
-                        WeatherDataList = weatherData;
+                        WeatherDataAPIData = weatherData;
                     }
                     else
                     {
@@ -119,36 +223,45 @@ namespace _20240300TryCWAAPI.Models.Predict
             return false;
         }
 
+        /// <summary>
+        /// 取得中央氣象局API特殊天氣警告
+        /// </summary>
+        /// <returns></returns>
         public async Task<bool> GetCWAApiSpecialWeatherWarningAsync()
         {
             string CWAAuthorization = "CWA-CD7DD4B6-4A6A-4A19-A2FF-AD801662DD42";
-            string WeatherForecast36Hour = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/W-C0033-002";
-            string URL = WeatherForecast36Hour + "?Authorization=" + CWAAuthorization;
+            string SpecialWeatherWarning = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/W-C0033-002";
+            string URL = SpecialWeatherWarning + "?Authorization=" + CWAAuthorization;
 
             using (var httpClient = new HttpClient())
             {
-                // HttpResponseMessage response = await httpClient.GetAsync(URL);
-                // 
-                // if (response.IsSuccessStatusCode)
-                // {
-                //     string json = await response.Content.ReadAsStringAsync();
-                //      = JsonConvert.DeserializeObject<>(json);
-                //      = ;
-                // }
-                // else
-                // {
-                //     Console.WriteLine($"API 請求失敗，狀態碼: {response.StatusCode}");
-                // }
+                HttpResponseMessage response = await httpClient.GetAsync(URL);
+                
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = await response.Content.ReadAsStringAsync();
+                    SpecialWeatherWarningData specialweatherwarningdata = JsonConvert.DeserializeObject<SpecialWeatherWarningData>(json);
+                    SpecialWeatherWarningAPIData = specialweatherwarningdata;
+                }
+                else
+                {
+                    Console.WriteLine($"API 請求失敗，狀態碼: {response.StatusCode}");
+                }
             }
 
             return true;
         }
 
-        public bool GetNewList() {
+        /// <summary>
+        /// 取得新天氣列表
+        /// </summary>
+        /// <returns></returns>
+        public bool GetNewWeatherList()
+        {
 
             PredictList = new List<PredictListData>();
 
-            foreach (var WeatherDataList_temp in WeatherDataList.records.Location)
+            foreach (var WeatherDataList_temp in WeatherDataAPIData.records.Location)
             {
                 var predictData = new PredictListData
                 {
@@ -164,10 +277,10 @@ namespace _20240300TryCWAAPI.Models.Predict
                 {
                     foreach (var time in weatherElement.Time)
                     {
-                        if (weatherElement.ElementName == "MaxT") 
+                        if (weatherElement.ElementName == "MaxT")
                         {
                             predictData.newmaxt.Add(time.Parameter.ParameterName ?? string.Empty);
-                            break; 
+                            break;
                         }
                         if (weatherElement.ElementName == "MinT")
                         {
@@ -193,6 +306,27 @@ namespace _20240300TryCWAAPI.Models.Predict
                 }
 
                 PredictList.Add(predictData);
+            }
+
+            return true;
+        }
+        /// <summary>
+        /// 取得新特警報列表
+        /// </summary>
+        /// <returns></returns>
+        public bool GetNewWeatherWaringList()
+        {
+            SpecialWeatherWarningList = new List<SpecialWeatherWarningListData>();
+
+            foreach (var SpecialWeatherWarningAPIData_temp in SpecialWeatherWarningAPIData.Records.Record)
+            {
+                var specialweatherwarninglistData = new SpecialWeatherWarningListData
+                {
+                    DatasetDescription = SpecialWeatherWarningAPIData_temp.DatasetInfo.datasetDescription ?? string.Empty,
+                    ContentText = SpecialWeatherWarningAPIData_temp.Contents.content.contentText ?? string.Empty
+                };
+
+                SpecialWeatherWarningList.Add(specialweatherwarninglistData);
             }
 
             return true;

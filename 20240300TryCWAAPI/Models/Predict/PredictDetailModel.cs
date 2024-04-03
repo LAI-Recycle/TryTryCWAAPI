@@ -20,9 +20,15 @@ namespace _20240300TryCWAAPI.Models.Predict
         /// </summary>
         public string TodayDate { get; set; }
 
+        /// <summary>
+        /// 天氣預報列表
+        /// </summary>
         public List<PredictListData> PredictList { get; set; }
 
-        public WeatherData WeatherDataList { get; set; }
+        /// <summary>
+        /// API天氣預報列表
+        /// </summary>
+        public WeatherData WeatherDataAPIData { get; set; }
 
         public class PredictListData
         {
@@ -144,7 +150,7 @@ namespace _20240300TryCWAAPI.Models.Predict
                     {
                         string json = await response.Content.ReadAsStringAsync();
                         WeatherData weatherData = JsonConvert.DeserializeObject<WeatherData>(json);
-                        WeatherDataList = weatherData;
+                        WeatherDataAPIData = weatherData;
                     }
                     else
                     {
@@ -166,7 +172,7 @@ namespace _20240300TryCWAAPI.Models.Predict
         {
             PredictList = new List<PredictListData>();
 
-            foreach (var WeatherDataList_temp in WeatherDataList.records.Location)
+            foreach (var WeatherDataList_temp in WeatherDataAPIData.records.Location)
             {
                 var predictData = new PredictListData
                 {
