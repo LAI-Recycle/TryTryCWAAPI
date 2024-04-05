@@ -9,6 +9,12 @@
     <hgroup>
         <h1>錯誤。</h1>
         <h2>處理您的要求時發生錯誤。</h2>
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <h3 class="alert alert-danger">
+                @ViewBag.ErrorMessage
+            </h3>
+        }
     </hgroup>
 </body>
 </html>

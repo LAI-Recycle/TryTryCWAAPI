@@ -48,10 +48,12 @@ namespace _20240300TryCWAAPI.Controllers
                 model.InitDict();
 
                 if (await model.GetCWAApiListAsync() == false)
-                { 
+                {
+                    throw new Exception("failed.");
                 }
                 if (model.GetCityDetail() == false) 
-                { 
+                {
+                    throw new Exception("failed.");
                 }
             
                 return View(model);

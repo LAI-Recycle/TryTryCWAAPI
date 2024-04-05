@@ -42,6 +42,9 @@ namespace _20240300TryCWAAPI.Models.Predict
             public List<int> endTime { get; set; }
         }
 
+        /// <summary>
+        /// 天氣數據
+        /// </summary>
         public class WeatherData
         {
             public string success { get; set; }

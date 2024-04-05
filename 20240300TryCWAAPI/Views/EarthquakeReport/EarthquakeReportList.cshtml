@@ -1,0 +1,39 @@
+@model _20240300TryCWAAPI.Models.EarthquakeReport.EarthquakeReportListModel
+
+<style>
+    .link-black {
+        color: black; /* 將連結顏色設置為黑色 */
+        text-decoration: none; /* 移除連結的下劃線 */
+    }
+</style>
+
+<br />
+<h2>
+    地震報告
+</h2>
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <h3>最新消息</h3>
+        <img src="@Model.EarthquakeSignificantDataAPIData[0].ReportImageURI"style="height: auto; width: 100%; " />
+    </div>
+    <div class="col-md-6">
+            @foreach (var a in Model.EarthquakeSignificantDataAPIData)
+            {
+                <div class="card mb-3">
+                    <a href="@a.Web" class="link-black">
+                        <h5 class="card-header">地震編號 @a.EarthquakeNo</h5>
+                        <div class="row card-body">
+                            <div class="col-md-8">
+                                <p> 規模 @a.EarthquakeInfo.EarthquakeMagnitude.MagnitudeValue 深度 @a.EarthquakeInfo.FocalDepth 公里</p>
+                                <p> @a.EarthquakeInfo.Epicenter.Location</p>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="@a.ShakemapImageURI" style="height: 100px; width: auto;" />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+    </div>
+</div>

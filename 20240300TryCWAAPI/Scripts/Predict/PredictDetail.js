@@ -1,10 +1,9 @@
 function Choose_Cityname_onChange(selectElement) {
     var selectedValue = selectElement.value;
     window.location.href = "/Predict/PredictDetail?choose_cityname=" + selectedValue
-    
 }
 
-//-------------測試用
+//-------------以下測試用-----------//
 function UpdateDetail(choose_cityname) {
     $.ajax({
         url: "/Predict/PredictDetail",

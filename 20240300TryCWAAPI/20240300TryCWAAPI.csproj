@@ -223,15 +223,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EarthquakeReport\EarthquakeReportController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\Predict\PredictController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EarthquakeReport\EarthquakeReportListModel.cs" />
     <Compile Include="Models\MongoDBSettings.cs" />
     <Compile Include="Models\Predict\PredictDetailModel.cs" />
     <Compile Include="Models\Predict\PredictListModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Views\EarthquakeReport\EarthquakeReportList.cshtml" />
     <None Include="Views\Predict\map.cshtml" />
   </ItemGroup>
   <ItemGroup>
