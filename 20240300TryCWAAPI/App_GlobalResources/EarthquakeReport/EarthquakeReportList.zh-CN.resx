@@ -126,6 +126,9 @@
   <data name="Label_KilometerDistance" xml:space="preserve">
     <value>公里</value>
   </data>
+  <data name="Label_LearnMore" xml:space="preserve">
+    <value>了解更多资讯</value>
+  </data>
   <data name="Label_Magnitude" xml:space="preserve">
     <value>规模</value>
   </data>

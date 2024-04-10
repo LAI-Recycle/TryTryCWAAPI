@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   查詢類似 了解更多資訊 的當地語系化字串。
+        /// </summary>
+        internal static string Label_LearnMore {
+            get {
+                return ResourceManager.GetString("Label_LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查詢類似 規模 的當地語系化字串。
         /// </summary>
         internal static string Label_Magnitude {

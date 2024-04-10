@@ -126,6 +126,9 @@
   <data name="Label_KilometerDistance" xml:space="preserve">
     <value>Kilometer</value>
   </data>
+  <data name="Label_LearnMore" xml:space="preserve">
+    <value>Learn more</value>
+  </data>
   <data name="Label_Magnitude" xml:space="preserve">
     <value>Richter magnitude</value>
   </data>

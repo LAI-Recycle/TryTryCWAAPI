@@ -117,22 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Label_ActionLinkAbout1" xml:space="preserve">
+  <data name="Label_ActionLinkAbout" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="Label_ActionLinkEarthquakeReportList1" xml:space="preserve">
+  <data name="Label_ActionLinkEarthquakeReportList" xml:space="preserve">
     <value>EarthquakeReport</value>
   </data>
-  <data name="Label_ActionLinkIndex1" xml:space="preserve">
+  <data name="Label_ActionLinkIndex" xml:space="preserve">
     <value>Index</value>
   </data>
-  <data name="Label_ActionLinkPredictList1" xml:space="preserve">
+  <data name="Label_ActionLinkPredictList" xml:space="preserve">
     <value>Thirty-six hour weather forecast</value>
   </data>
-  <data name="Label_Title1" xml:space="preserve">
+  <data name="Label_Title" xml:space="preserve">
     <value>Lai Central Weather Administration</value>
   </data>
-  <data name="Label_TitleBelow1" xml:space="preserve">
+  <data name="Label_TitleBelow" xml:space="preserve">
     <value>Lai's ASP.NET application</value>
   </data>
 </root>
