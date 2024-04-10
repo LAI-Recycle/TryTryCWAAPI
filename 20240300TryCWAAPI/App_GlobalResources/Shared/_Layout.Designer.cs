@@ -22,14 +22,14 @@ namespace Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class PredictList {
+    internal class _Layout {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal PredictList() {
+        internal _Layout() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Resources.PredictList", global::System.Reflection.Assembly.Load("App_GlobalResources"));
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Resources._Layout", global::System.Reflection.Assembly.Load("App_GlobalResources"));
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,74 +61,56 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   查詢類似 °C 的當地語系化字串。
+        ///   查詢類似 關於 的當地語系化字串。
         /// </summary>
-        internal static string Label_CelsiusSymbol {
+        internal static string Label_ActionLinkAbout {
             get {
-                return ResourceManager.GetString("Label_CelsiusSymbol", resourceCulture);
+                return ResourceManager.GetString("Label_ActionLinkAbout", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查詢類似 降雨機率 的當地語系化字串。
+        ///   查詢類似 地震報告 的當地語系化字串。
         /// </summary>
-        internal static string Label_ChanceOfRainfall {
+        internal static string Label_ActionLinkEarthquakeReportList {
             get {
-                return ResourceManager.GetString("Label_ChanceOfRainfall", resourceCulture);
+                return ResourceManager.GetString("Label_ActionLinkEarthquakeReportList", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查詢類似 舒適度 的當地語系化字串。
+        ///   查詢類似 首頁 的當地語系化字串。
         /// </summary>
-        internal static string Label_Comfort {
+        internal static string Label_ActionLinkIndex {
             get {
-                return ResourceManager.GetString("Label_Comfort", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類似 最高氣溫 的當地語系化字串。
-        /// </summary>
-        internal static string Label_MaximumTemperature {
-            get {
-                return ResourceManager.GetString("Label_MaximumTemperature", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類似 最低氣溫 的當地語系化字串。
-        /// </summary>
-        internal static string Label_MinimumTemperature {
-            get {
-                return ResourceManager.GetString("Label_MinimumTemperature", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類似 % 的當地語系化字串。
-        /// </summary>
-        internal static string Label_Percentage {
-            get {
-                return ResourceManager.GetString("Label_Percentage", resourceCulture);
+                return ResourceManager.GetString("Label_ActionLinkIndex", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 三十六小時天氣預報 的當地語系化字串。
         /// </summary>
-        internal static string Label_Title36WeatherForecast {
+        internal static string Label_ActionLinkPredictList {
             get {
-                return ResourceManager.GetString("Label_Title36WeatherForecast", resourceCulture);
+                return ResourceManager.GetString("Label_ActionLinkPredictList", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查詢類似 天氣現象 的當地語系化字串。
+        ///   查詢類似 Lai的氣象局 的當地語系化字串。
         /// </summary>
-        internal static string Label_WeatherPhenomenon {
+        internal static string Label_Title {
             get {
-                return ResourceManager.GetString("Label_WeatherPhenomenon", resourceCulture);
+                return ResourceManager.GetString("Label_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 Lai的 ASP.NET 應用程式 的當地語系化字串。
+        /// </summary>
+        internal static string Label_TitleBelow {
+            get {
+                return ResourceManager.GetString("Label_TitleBelow", resourceCulture);
             }
         }
     }

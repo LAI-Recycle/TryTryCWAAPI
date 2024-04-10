@@ -17,7 +17,7 @@
 </style>
 
 <br />
-<h2>@Model.WeatherDataAPIData.records.DatasetDescription</h2>
+<h2>@Resources.PredictList.Label_Title36WeatherForecast</h2>
 <br />
 @if (Model.SpecialWeatherWarningList != null)
 {
@@ -48,31 +48,31 @@
 
                             <dl class="row">
 
-                                <dt class="col-sm-4">@Resources.PredictList.Label_MaximumTemperature</dt>
+                                <dt class="col-sm-6">@Resources.PredictList.Label_MaximumTemperature</dt>
                                 @foreach (var maxt in PredictList.newmaxt)
                                 {
-                                    <dd class="col-sm-8">@maxt @Resources.PredictList.Label_CelsiusSymbol</dd>
-                                }
-                                <dt class="col-sm-4">@Resources.PredictList.Label_MinimumTemperature</dt>
+                                    <dd class="col-sm-6">@maxt @Resources.PredictList.Label_CelsiusSymbol</dd>
+                                }   
+                                <dt class="col-sm-6">@Resources.PredictList.Label_MinimumTemperature</dt>
                                 @foreach (var mint in PredictList.newmint)
                                 {
-                                    <dd class="col-sm-8">@mint @Resources.PredictList.Label_CelsiusSymbol</dd>
+                                    <dd class="col-sm-6">@mint @Resources.PredictList.Label_CelsiusSymbol</dd>
                                 }
-                                <dt class="col-sm-4">@Resources.PredictList.Label_Comfort</dt>
+                                <dt class="col-sm-6">@Resources.PredictList.Label_Comfort</dt>
                                 @foreach (var ci in PredictList.newci)
                                 {
-                                    <dd class="col-sm-8">@ci</dd>
+                                    <dd class="col-sm-6">@ci</dd>
                                 }
 
-                                <dt class="col-sm-4">@Resources.PredictList.Label_ChanceOfRainfall</dt>
+                                <dt class="col-sm-6">@Resources.PredictList.Label_ChanceOfRainfall</dt>
                                 @foreach (var pop in PredictList.newpop)
                                 {
-                                    <dd class="col-sm-8">@pop @Resources.PredictList.Label_Percentage</dd>
+                                    <dd class="col-sm-6">@pop @Resources.PredictList.Label_Percentage</dd>
                                 }
-                                <dt class="col-sm-4">@Resources.PredictList.Label_WeatherPhenomenon</dt>
+                                <dt class="col-sm-6">@Resources.PredictList.Label_WeatherPhenomenon</dt>
                                 @foreach (var wx in PredictList.newwx)
                                 {
-                                    <dd class="col-sm-8">@wx</dd>
+                                    <dd class="col-sm-6">@wx</dd>
                                 }
                             </dl>
                         </div>

@@ -230,7 +230,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EarthquakeReportList.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Error.designer.cs">
+    <Compile Include="App_GlobalResources\EarthquakeReport\EarthquakeReportList.zh-CN.designer.cs">
+      <DependentUpon>EarthquakeReportList.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\EarthquakeReport\EarthquakeReportList.en-US.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EarthquakeReportList.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Shared\Error.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Error.resx</DependentUpon>
@@ -240,10 +250,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Predict.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\Predict\PredictDetail.en-US.designer.cs">
+      <DependentUpon>PredictDetail.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Predict\PredictDetail.zh-CN.designer.cs">
+      <DependentUpon>PredictDetail.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="App_GlobalResources\Predict\PredictDetail.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PredictDetail.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Predict\PredictList.en-US.designer.cs">
+      <DependentUpon>PredictList.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="App_GlobalResources\Predict\PredictList.designer.cs">
       <AutoGen>True</AutoGen>
@@ -254,6 +279,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PredictList.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Shared\_Layout.en-US.designer.cs">
+      <DependentUpon>_Layout.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Shared\_Layout.zh-CN.designer.cs">
+      <DependentUpon>_Layout.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Shared\_Layout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Layout.resx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -364,10 +404,42 @@
     <Analyzer Include="..\packages\AWSSDK.SecurityToken.3.7.100.14\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_GlobalResources\EarthquakeReport\EarthquakeReportList.en-US.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>EarthquakeReportList.en-US.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Predict\PredictDetail.zh-CN.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>PredictDetail.zh-CN.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\EarthquakeReport\EarthquakeReportList.zh-CN.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>EarthquakeReportList.zh-CN.designer.cs</LastGenOutput>
+    </Content>
     <EmbeddedResource Include="App_GlobalResources\Predict\PredictDetail.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>PredictDetail.designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Content Include="App_GlobalResources\Predict\PredictList.en-US.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>PredictList.en-US.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Predict\PredictDetail.en-US.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>PredictDetail.en-US.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Shared\_Layout.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>_Layout.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Shared\_Layout.zh-CN.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>_Layout.zh-CN.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Shared\_Layout.en-US.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>_Layout.en-US.designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Predict\PredictList.resx">
@@ -382,7 +454,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\Error.resx">
+    <Content Include="App_GlobalResources\Shared\Error.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Error.designer.cs</LastGenOutput>
     </Content>

@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Lai的中央氣象局</title>
+    <title>@ViewBag.Title - @Resources._Layout.Label_Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="/Scripts/Shared/_Layout.js" type="text/javascript"></script>
@@ -12,24 +12,26 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
-            @Html.ActionLink("我的中央氣象局", "PredictList", "Predict", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink(Resources._Layout.Label_Title, "PredictList", "Predict", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="切換導覽" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                Session["lang"]
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("首頁", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("關於", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("三十六小時天氣預報", "PredictList", "Predict", null, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("地震報告", "EarthquakeReportList", "EarthquakeReport", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink(Resources._Layout.Label_ActionLinkIndex, "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink(Resources._Layout.Label_ActionLinkAbout, "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink(Resources._Layout.Label_ActionLinkPredictList, "PredictList", "Predict", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink(Resources._Layout.Label_ActionLinkEarthquakeReportList, "EarthquakeReportList", "EarthquakeReport", null, new { @class = "nav-link" })</li>
                 </ul>
-                <!--
+
                 <div class="btn-group">
-                    <button type="button" class="btn btn-secondary" onclick="changeLanguage('zh-TW')">中文</button>
-                    <button type="button" class="btn btn-secondary" onclick="changeLanguage('zh-CN')">中文</button>
+                    <button type="button" class="btn btn-light" onclick="changeLanguage('zh-TW')">繁體中文</button>
+                    <button type="button" class="btn btn-light" onclick="changeLanguage('zh-CN')">简体中文</button>
+                    <button type="button" class="btn btn-light" onclick="changeLanguage('en-US')">English</button>
                 </div>
-                -->
+
             </div>
         </div>
     </nav>
@@ -37,7 +39,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Lai的 ASP.NET 應用程式</p>
+            <p>&copy; @DateTime.Now.Year - @Resources._Layout.Label_TitleBelow</p>
         </footer>
     </div>
 

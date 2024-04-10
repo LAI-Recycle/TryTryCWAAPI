@@ -4,14 +4,14 @@
 
 <br />
 <h2>
-    @Model.TodayDate @Resources.PredictDetail.Label_TitleCountyForecast - 
+    @Model.TodayDate @Resources.PredictDetail.Label_TitleCountyForecast -
     @if (Model.PredictList.Any())
     {
-        @Model.choose_cityname
+        @Model.ChooseCitynameDict[Model.choose_cityname]
     }
 </h2>
 <br />
-<table>
+<table> 
     <tr>
         <th width="20%">
             <label> @Resources.PredictDetail.Label_PleaseSelectACounty </label>

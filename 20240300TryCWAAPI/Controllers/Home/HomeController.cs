@@ -18,7 +18,7 @@ namespace _20240300TryCWAAPI.Controllers
         }
         public ActionResult ChangeLanguage(string lang)
         {
-            Session["CurrentCulture"] = new CultureInfo(lang);
+            Session["lang"] = lang;
             return Json(true);
         }
     }

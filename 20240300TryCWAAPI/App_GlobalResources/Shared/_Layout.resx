@@ -117,22 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Label_Depth" xml:space="preserve">
-    <value>深度</value>
+  <data name="Label_ActionLinkAbout" xml:space="preserve">
+    <value>關於</value>
   </data>
-  <data name="Label_EarthquakeNumber" xml:space="preserve">
-    <value>地震編號</value>
-  </data>
-  <data name="Label_KilometerDistance" xml:space="preserve">
-    <value>公里</value>
-  </data>
-  <data name="Label_Magnitude" xml:space="preserve">
-    <value>規模</value>
-  </data>
-  <data name="Label_News" xml:space="preserve">
-    <value>最新消息</value>
-  </data>
-  <data name="Label_TitleEarthquakeReport" xml:space="preserve">
+  <data name="Label_ActionLinkEarthquakeReportList" xml:space="preserve">
     <value>地震報告</value>
+  </data>
+  <data name="Label_ActionLinkIndex" xml:space="preserve">
+    <value>首頁</value>
+  </data>
+  <data name="Label_ActionLinkPredictList" xml:space="preserve">
+    <value>三十六小時天氣預報</value>
+  </data>
+  <data name="Label_Title" xml:space="preserve">
+    <value>Lai的氣象局</value>
+  </data>
+  <data name="Label_TitleBelow" xml:space="preserve">
+    <value>Lai的 ASP.NET 應用程式</value>
   </data>
 </root>

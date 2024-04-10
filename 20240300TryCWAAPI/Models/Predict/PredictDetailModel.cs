@@ -110,28 +110,28 @@ namespace _20240300TryCWAAPI.Models.Predict
             TodayDate = month + "/" + day;
 
             ChooseCitynameDict = new Dictionary<string, string>();
-            ChooseCitynameDict.Add( Resources.PredictDetail.宜蘭縣, Resources.PredictDetail.宜蘭縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.花蓮縣, Resources.PredictDetail.花蓮縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.臺東縣, Resources.PredictDetail.臺東縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.澎湖縣, Resources.PredictDetail.澎湖縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.金門縣, Resources.PredictDetail.金門縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.連江縣, Resources.PredictDetail.連江縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.臺北市, Resources.PredictDetail.臺北市);
-            ChooseCitynameDict.Add( Resources.PredictDetail.新北市, Resources.PredictDetail.新北市);
-            ChooseCitynameDict.Add( Resources.PredictDetail.桃園市, Resources.PredictDetail.桃園市);
-            ChooseCitynameDict.Add( Resources.PredictDetail.臺中市, Resources.PredictDetail.臺中市);
-            ChooseCitynameDict.Add( Resources.PredictDetail.臺南市, Resources.PredictDetail.臺南市);
-            ChooseCitynameDict.Add( Resources.PredictDetail.高雄市, Resources.PredictDetail.高雄市);
-            ChooseCitynameDict.Add( Resources.PredictDetail.基隆市, Resources.PredictDetail.基隆市);
-            ChooseCitynameDict.Add( Resources.PredictDetail.新竹縣, Resources.PredictDetail.新竹縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.新竹市, Resources.PredictDetail.新竹市);
-            ChooseCitynameDict.Add( Resources.PredictDetail.苗栗縣, Resources.PredictDetail.苗栗縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.彰化縣, Resources.PredictDetail.彰化縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.南投縣, Resources.PredictDetail.南投縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.雲林縣, Resources.PredictDetail.雲林縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.嘉義縣, Resources.PredictDetail.嘉義縣);
-            ChooseCitynameDict.Add( Resources.PredictDetail.嘉義市, Resources.PredictDetail.嘉義市);
-            ChooseCitynameDict.Add( Resources.PredictDetail.屏東縣, Resources.PredictDetail.屏東縣);
+            ChooseCitynameDict.Add( "宜蘭縣", Resources.PredictDetail.宜蘭縣);
+            ChooseCitynameDict.Add( "花蓮縣", Resources.PredictDetail.花蓮縣);
+            ChooseCitynameDict.Add( "臺東縣", Resources.PredictDetail.臺東縣);
+            ChooseCitynameDict.Add( "澎湖縣", Resources.PredictDetail.澎湖縣);
+            ChooseCitynameDict.Add( "金門縣", Resources.PredictDetail.金門縣);
+            ChooseCitynameDict.Add( "連江縣", Resources.PredictDetail.連江縣);
+            ChooseCitynameDict.Add( "臺北市", Resources.PredictDetail.臺北市);
+            ChooseCitynameDict.Add( "新北市", Resources.PredictDetail.新北市);
+            ChooseCitynameDict.Add( "桃園市", Resources.PredictDetail.桃園市);
+            ChooseCitynameDict.Add( "臺中市", Resources.PredictDetail.臺中市);
+            ChooseCitynameDict.Add( "臺南市", Resources.PredictDetail.臺南市);
+            ChooseCitynameDict.Add( "高雄市", Resources.PredictDetail.高雄市);
+            ChooseCitynameDict.Add( "基隆市", Resources.PredictDetail.基隆市);
+            ChooseCitynameDict.Add( "新竹縣", Resources.PredictDetail.新竹縣);
+            ChooseCitynameDict.Add( "新竹市", Resources.PredictDetail.新竹市);
+            ChooseCitynameDict.Add( "苗栗縣", Resources.PredictDetail.苗栗縣);
+            ChooseCitynameDict.Add( "彰化縣", Resources.PredictDetail.彰化縣);
+            ChooseCitynameDict.Add( "南投縣", Resources.PredictDetail.南投縣);
+            ChooseCitynameDict.Add( "雲林縣", Resources.PredictDetail.雲林縣);
+            ChooseCitynameDict.Add( "嘉義縣", Resources.PredictDetail.嘉義縣);
+            ChooseCitynameDict.Add( "嘉義市", Resources.PredictDetail.嘉義市);
+            ChooseCitynameDict.Add( "屏東縣", Resources.PredictDetail.屏東縣);
         }
 
 

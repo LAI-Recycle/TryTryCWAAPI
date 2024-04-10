@@ -59,5 +59,59 @@ namespace Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查詢類似 深度 的當地語系化字串。
+        /// </summary>
+        internal static string Label_Depth {
+            get {
+                return ResourceManager.GetString("Label_Depth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 地震編號 的當地語系化字串。
+        /// </summary>
+        internal static string Label_EarthquakeNumber {
+            get {
+                return ResourceManager.GetString("Label_EarthquakeNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 公里 的當地語系化字串。
+        /// </summary>
+        internal static string Label_KilometerDistance {
+            get {
+                return ResourceManager.GetString("Label_KilometerDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 規模 的當地語系化字串。
+        /// </summary>
+        internal static string Label_Magnitude {
+            get {
+                return ResourceManager.GetString("Label_Magnitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 最新消息 的當地語系化字串。
+        /// </summary>
+        internal static string Label_News {
+            get {
+                return ResourceManager.GetString("Label_News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 地震報告 的當地語系化字串。
+        /// </summary>
+        internal static string Label_TitleEarthquakeReport {
+            get {
+                return ResourceManager.GetString("Label_TitleEarthquakeReport", resourceCulture);
+            }
+        }
     }
 }

@@ -126,32 +126,17 @@
   <data name="Label_Comfort" xml:space="preserve">
     <value>舒适度</value>
   </data>
-  <data name="Label_Depth" xml:space="preserve">
-    <value>深度</value>
-  </data>
-  <data name="Label_EarthquakeNumber" xml:space="preserve">
-    <value>地震编号</value>
-  </data>
-  <data name="Label_KilometerDistance" xml:space="preserve">
-    <value>公里</value>
-  </data>
-  <data name="Label_Magnitude" xml:space="preserve">
-    <value>规模</value>
-  </data>
   <data name="Label_MaximumTemperature" xml:space="preserve">
     <value>最高气温</value>
   </data>
   <data name="Label_MinimumTemperature" xml:space="preserve">
     <value>最低气温</value>
   </data>
-  <data name="Label_News" xml:space="preserve">
-    <value>最新消息</value>
-  </data>
   <data name="Label_Percentage" xml:space="preserve">
     <value>%</value>
   </data>
-  <data name="Label_TitleEarthquakeReport" xml:space="preserve">
-    <value>地震报告</value>
+  <data name="Label_Title36WeatherForecast" xml:space="preserve">
+    <value>三十六小时天气预报</value>
   </data>
   <data name="Label_WeatherPhenomenon" xml:space="preserve">
     <value>天气现象</value>

@@ -126,32 +126,17 @@
   <data name="Label_Comfort" xml:space="preserve">
     <value>舒適度</value>
   </data>
-  <data name="Label_Depth" xml:space="preserve">
-    <value>深度</value>
-  </data>
-  <data name="Label_EarthquakeNumber" xml:space="preserve">
-    <value>地震編號</value>
-  </data>
-  <data name="Label_KilometerDistance" xml:space="preserve">
-    <value>公里</value>
-  </data>
-  <data name="Label_Magnitude" xml:space="preserve">
-    <value>規模</value>
-  </data>
   <data name="Label_MaximumTemperature" xml:space="preserve">
     <value>最高氣溫</value>
   </data>
   <data name="Label_MinimumTemperature" xml:space="preserve">
     <value>最低氣溫</value>
   </data>
-  <data name="Label_News" xml:space="preserve">
-    <value>最新消息</value>
-  </data>
   <data name="Label_Percentage" xml:space="preserve">
     <value>%</value>
   </data>
-  <data name="Label_TitleEarthquakeReport" xml:space="preserve">
-    <value>地震報告</value>
+  <data name="Label_Title36WeatherForecast" xml:space="preserve">
+    <value>三十六小時天氣預報</value>
   </data>
   <data name="Label_WeatherPhenomenon" xml:space="preserve">
     <value>天氣現象</value>
