@@ -14,22 +14,22 @@ namespace _20240300TryCWAAPI.Controllers
             {
                 if (await model.GetCWAApiListAsync() == false)
                 {
-                    throw new Exception("failed.");
+                    throw new Exception( Resources.Predict.SystemMsg_Failure);
                 }
 
                 if (await model.GetCWAApiSpecialWeatherWarningAsync() == false) 
                 {
-                    throw new Exception("failed.");
+                    throw new Exception( Resources.Predict.SystemMsg_Failure);
                 }
 
                 if (model.GetNewWeatherList() == false) 
                 {
-                    throw new Exception("failed.");
+                    throw new Exception(Resources.Predict.SystemMsg_Failure);
                 }
 
                 if (model.GetNewWeatherWaringList() == false)
                 {
-                    throw new Exception("failed.");
+                    throw new Exception(Resources.Predict.SystemMsg_Failure);
                 }
 
                 return View(model);
@@ -49,11 +49,11 @@ namespace _20240300TryCWAAPI.Controllers
 
                 if (await model.GetCWAApiListAsync() == false)
                 {
-                    throw new Exception("failed.");
+                    throw new Exception(Resources.Predict.SystemMsg_Failure);
                 }
                 if (model.GetCityDetail() == false) 
                 {
-                    throw new Exception("failed.");
+                    throw new Exception(Resources.Predict.SystemMsg_Failure);
                 }
             
                 return View(model);

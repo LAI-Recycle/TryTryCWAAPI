@@ -13,7 +13,7 @@ namespace _20240300TryCWAAPI.Controllers
             {
                 if (await model.GetCWAEarthquakeSignificantlyApiListAsync() == false)
                 {
-                    throw new Exception("GetCWAEarthquakeSignificantlyApiListAsync failed.");
+                    throw new Exception( Resources.EarthquakeReport.SystemMsg_Failure);
                 }
             }
             catch (Exception ex)

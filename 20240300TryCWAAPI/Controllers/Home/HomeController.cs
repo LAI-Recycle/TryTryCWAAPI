@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Globalization;
+using System.Web.Mvc;
 
 namespace _20240300TryCWAAPI.Controllers
 {
@@ -15,6 +16,10 @@ namespace _20240300TryCWAAPI.Controllers
 
             return View();
         }
-
+        public ActionResult ChangeLanguage(string lang)
+        {
+            Session["CurrentCulture"] = new CultureInfo(lang);
+            return Json(true);
+        }
     }
 }

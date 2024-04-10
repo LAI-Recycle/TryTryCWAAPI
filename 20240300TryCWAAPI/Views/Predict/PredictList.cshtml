@@ -48,39 +48,37 @@
 
                             <dl class="row">
 
-                                <dt class="col-sm-4">最高氣溫</dt>
+                                <dt class="col-sm-4">@Resources.PredictList.Label_MaximumTemperature</dt>
                                 @foreach (var maxt in PredictList.newmaxt)
                                 {
-                                    <dd class="col-sm-8">@maxt°C</dd>
+                                    <dd class="col-sm-8">@maxt @Resources.PredictList.Label_CelsiusSymbol</dd>
                                 }
-                                <dt class="col-sm-4">最低氣溫</dt>
+                                <dt class="col-sm-4">@Resources.PredictList.Label_MinimumTemperature</dt>
                                 @foreach (var mint in PredictList.newmint)
                                 {
-                                    <dd class="col-sm-8">@mint°C</dd>
+                                    <dd class="col-sm-8">@mint @Resources.PredictList.Label_CelsiusSymbol</dd>
                                 }
-                                <dt class="col-sm-4">舒適度</dt>
+                                <dt class="col-sm-4">@Resources.PredictList.Label_Comfort</dt>
                                 @foreach (var ci in PredictList.newci)
                                 {
                                     <dd class="col-sm-8">@ci</dd>
                                 }
 
-                                <dt class="col-sm-4">降雨機會</dt>
+                                <dt class="col-sm-4">@Resources.PredictList.Label_ChanceOfRainfall</dt>
                                 @foreach (var pop in PredictList.newpop)
                                 {
-                                    <dd class="col-sm-8">@pop%</dd>
+                                    <dd class="col-sm-8">@pop @Resources.PredictList.Label_Percentage</dd>
                                 }
-                                <dt class="col-sm-4">天氣現象</dt>
+                                <dt class="col-sm-4">@Resources.PredictList.Label_WeatherPhenomenon</dt>
                                 @foreach (var wx in PredictList.newwx)
                                 {
                                     <dd class="col-sm-8">@wx</dd>
                                 }
-
                             </dl>
                         </div>
                     </div>
                 </a>
             </div>
-
         }
     </div>
 </div>

@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的中央氣象局</title>
+    <title>@ViewBag.Title - Lai的中央氣象局</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="/Scripts/Shared/_Layout.js" type="text/javascript"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
@@ -23,6 +24,12 @@
                     <li>@Html.ActionLink("三十六小時天氣預報", "PredictList", "Predict", null, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("地震報告", "EarthquakeReportList", "EarthquakeReport", null, new { @class = "nav-link" })</li>
                 </ul>
+                <!--
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary" onclick="changeLanguage('zh-TW')">中文</button>
+                    <button type="button" class="btn btn-secondary" onclick="changeLanguage('zh-CN')">中文</button>
+                </div>
+                -->
             </div>
         </div>
     </nav>
@@ -30,7 +37,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
+            <p>&copy; @DateTime.Now.Year - Lai的 ASP.NET 應用程式</p>
         </footer>
     </div>
 

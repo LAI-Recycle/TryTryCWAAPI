@@ -9,12 +9,12 @@
 
 <br />
 <h2>
-    地震報告
+    @Resources.PredictList.Label_TitleEarthquakeReport
 </h2>
 <br />
 <div class="row">
     <div class="col-md-6">
-        <h3>最新消息</h3>
+        <h3>@Resources.PredictList.Label_News</h3>
         <img src="@Model.EarthquakeSignificantDataAPIData[0].ReportImageURI"style="height: auto; width: 100%; " />
     </div>
     <div class="col-md-6">
@@ -22,10 +22,10 @@
             {
                 <div class="card mb-3">
                     <a href="@a.Web" class="link-black">
-                        <h5 class="card-header">地震編號 @a.EarthquakeNo</h5>
+                        <h5 class="card-header">@Resources.PredictList.Label_EarthquakeNumber @a.EarthquakeNo</h5>
                         <div class="row card-body">
                             <div class="col-md-8">
-                                <p> 規模 @a.EarthquakeInfo.EarthquakeMagnitude.MagnitudeValue 深度 @a.EarthquakeInfo.FocalDepth 公里</p>
+                                <p> @Resources.PredictList.Label_Magnitude @a.EarthquakeInfo.EarthquakeMagnitude.MagnitudeValue @Resources.PredictList.Label_Depth @a.EarthquakeInfo.FocalDepth @Resources.PredictList.Label_KilometerDistance</p>
                                 <p> @a.EarthquakeInfo.Epicenter.Location</p>
                             </div>
                             <div class="col-md-4">

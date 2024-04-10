@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using static _20240300TryCWAAPI.Models.Predict.PredictDetailModel;
-using static _20240300TryCWAAPI.Models.Predict.PredictListModel;
 
 namespace _20240300TryCWAAPI.Models.Predict
 {

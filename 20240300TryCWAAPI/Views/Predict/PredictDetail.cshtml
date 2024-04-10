@@ -4,7 +4,7 @@
 
 <br />
 <h2>
-    @Model.TodayDate 縣市預報 - 
+    @Model.TodayDate @Resources.PredictDetail.Label_TitleCountyForecast - 
     @if (Model.PredictList.Any())
     {
         @Model.choose_cityname
@@ -14,7 +14,7 @@
 <table>
     <tr>
         <th width="20%">
-            <label> 選擇縣市 </label>
+            <label> @Resources.PredictDetail.Label_PleaseSelectACounty </label>
         </th>
 
         <td>
@@ -39,10 +39,10 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body text-center">
 
-                            <h5 class="card-title">氣象預報</h5>
-                            <p>@Model.PredictList[0].startTime[i] - @Model.PredictList[0].endTime[i] 點</p>
-                            <p class="card-text">@Model.PredictList[0].newmaxt[i] - @Model.PredictList[0].newmint[i]℃</p>
-                            <p class="card-text">@Model.PredictList[0].newpop[i]%</p>
+                            <h5 class="card-title">@Resources.PredictDetail.Label_WeatherForecast</h5>
+                            <p>@Model.PredictList[0].startTime[i] - @Model.PredictList[0].endTime[i] @Resources.PredictDetail.Label_TimeHour</p>
+                            <p class="card-text">@Model.PredictList[0].newmaxt[i] - @Model.PredictList[0].newmint[i] @Resources.PredictDetail.Label_CelsiusSymbol</p>
+                            <p class="card-text">@Model.PredictList[0].newpop[i] @Resources.PredictDetail.Label_Percentage</p>
                             <p class="card-text">@Model.PredictList[0].newci[i]</p>
                         </div>
                     </div>
@@ -53,6 +53,6 @@
 </div>
 <br />
 <p class="text-center">
-    <a href="/Predict/PredictList" class="btn btn-secondary" type="button" id="BackButton" name="BackButton">返回</a>
+    <a href="/Predict/PredictList" class="btn btn-secondary" type="button" id="BackButton" name="BackButton">@Resources.PredictDetail.Label_ReturnPage</a>
     <!--<input act="CommentEdit" class="btnSearch" con="Comment" id="CancelButton" name="CancelButton" onclick="_ButtonSubmit_onClick(this)" type="button" value="關閉">-->
 </p>
